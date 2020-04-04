@@ -5,9 +5,6 @@
                 "function": "powerline.segments.common.players.cmus"
             },
             {
-                "function": "powerline.segments.common.net.network_load"
-            },
-            {
                 "function": "powerline_gitstatus.gitstatus"
             },
             {
