@@ -2,7 +2,8 @@
     "segments": {
         "right": [
             {
-                "function": "powerline.segments.common.players.cmus"
+                "function": "powerline.segments.common.players.cmus",
+                "priority": 10
             },
             {
                 "function": "powerline_gitstatus.gitstatus"

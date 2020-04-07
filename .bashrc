@@ -32,7 +32,7 @@ alias kk="sudo killall -9"
 alias def="sdcv"
 alias tmux="tmux -u -2"
 alias tsrc="tmux source-file ~/.tmux.conf"
-source /home/jsin/.config/broot/launcher/bash/br
+source $HOME/launcher/bash/br
 
 aur(){
     pushd .
