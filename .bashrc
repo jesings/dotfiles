@@ -1,11 +1,18 @@
-set -o vi
 #
 # ~/.bashrc
 #
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+set -o vi
+
 alias cd..="cd .."
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias info='info --vi-keys'
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 export LESS=-R
 export LESS_TERMCAP_mb=$'\E[1;31m'     # begin blink
@@ -15,24 +22,29 @@ export LESS_TERMCAP_so=$'\E[01;44;33m' # begin reverse video
 export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
+export PAGER='less'
+export NNN_PLUG='D:dups;d:diffs;h:hexview'
 
-alias wget="wget --hsts-file=$HOME/.config/wget-hsts"
-
-alias su="sudo su"
-alias vim="vim -X"
-alias svim="sudo vim"
-alias pac="sudo pacman"
-alias lls="exa"
-alias ls="exa --icons"
-alias grep="grep --color=auto"
 alias ccat="highlight --out-format=ansi"
+alias def="sdcv"
 alias dl="youtube-dl --add-metadata -ic"
 alias dla="youtube-dl --add-metadata -xic"
+alias docker="sudo docker"
+alias grep="grep --color=auto"
 alias kk="sudo killall -9"
-alias def="sdcv"
+alias lls="exa"
+alias ls="exa --icons"
+alias pac="sudo pacman"
+alias srcme="source ~/.bashrc"
+alias su="sudo su"
+alias svim="sudo vim"
 alias tmux="tmux -u -2"
 alias tsrc="tmux source-file ~/.tmux.conf"
-source $HOME/.config/broot/launcher/bash/br
+alias vim="vim -X"
+alias ivim="vim -X -u ~/.vim/lsp.vim"
+
+alias mdarg="exa -1 --sort=modified | xargs -d '\n'"
+alias rndarg="exa -1 | sort -R | xargs -d '\n'"
 
 aur(){
     pushd .
@@ -50,22 +62,16 @@ aur(){
     popd
 }
 
-alias mdarg="exa -1 --sort=modified | xargs -d '\n'"
-alias rndarg="exa -1 | sort -R | xargs -d '\n'"
+source /usr/share/doc/pkgfile/command-not-found.bash
+source $HOME/.config/broot/launcher/bash/br
+source ~/.fonts/*.sh
 
+export HISTCONTROL="erasedups:ignorespace"
 stty -ixon
+shopt -s autocd cdspell checkwinsize direxpand dirspell extglob histappend lithist
 
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
-
-PS1="\[\033[1;34m\][\d \t]\[\033[32m\] \u@\h \[\033[37m\]\w \$ \[\033[0;37m\]"
+PS1="[\d \t]\033[0;33m \u@\h \[\033[0;35m\]\w \033[0m\$ "
 
 neofetch
-export HISTCONTROL=ignorespace
 
-alias docker="sudo docker"
-alias srcme="source ~/.bashrc"
-source ~/.fonts/*.sh

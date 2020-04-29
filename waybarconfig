@@ -9,8 +9,8 @@
     //"modules-center": ["sway/window"],
     "modules-right": ["disk", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery", "clock", "tray"],
     // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
+    "sway/workspaces": {
+         "disable-scroll": true
     //     "all-outputs": true,
     //     "format": "{name}: {icon}",
     //     "format-icons": {
@@ -23,7 +23,7 @@
     //         "focused": "",
     //         "default": ""
     //     }
-    // },
+    },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
