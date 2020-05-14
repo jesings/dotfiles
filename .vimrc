@@ -91,6 +91,7 @@ Plug 'ap/vim-css-color'
 Plug 'tpope/vim-obsession'
 Plug 'unblevable/quick-scope'
 Plug 'vim/killersheep'
+Plug 'racer-rust/vim-racer'
 
 "Completion
 Plug 'prabirshrestha/async.vim', { 'on': [] }
@@ -153,5 +154,15 @@ tnoremap <silent> <C-h> <C-\><C-n>:TmuxNavigateLeft<cr>
 tnoremap <silent> <C-j> <C-\><C-n>:TmuxNavigateDown<cr>
 tnoremap <silent> <C-k> <C-\><C-n>:TmuxNavigateUp<cr>
 tnoremap <silent> <C-l> <C-\><C-n>:TmuxNavigateRight<cr>
+
+nnoremap <space>1 1gt
+nnoremap <space>2 2gt
+nnoremap <space>3 3gt
+nnoremap <space>4 4gt
+nnoremap <space>5 5gt
+nnoremap <space>6 6gt
+nnoremap <space>7 7gt
+nnoremap <space>8 8gt
+nnoremap <space>9 9gt
 
 set ttymouse=sgr
