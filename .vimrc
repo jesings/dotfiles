@@ -10,6 +10,8 @@ set nocompatible              " be iMproved, required
 set splitbelow splitright
 syntax on
 
+set wildignore=*.o,*.obj,*.bak,*.exe
+
 "Automatically install vim plug if not installed
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -91,18 +93,6 @@ Plug 'ap/vim-css-color'
 Plug 'tpope/vim-obsession'
 Plug 'unblevable/quick-scope'
 Plug 'vim/killersheep'
-Plug 'racer-rust/vim-racer'
-
-"Completion
-Plug 'prabirshrestha/async.vim', { 'on': [] }
-Plug 'prabirshrestha/vim-lsp', { 'on': [] }
-Plug 'prabirshrestha/asyncomplete.vim', { 'on': [] }
-Plug 'prabirshrestha/asyncomplete-lsp.vim', { 'on': [] }
-Plug 'prabirshrestha/asyncomplete-necovim.vim', { 'on': [] }
-Plug 'Shougo/neco-syntax', { 'on': [] }
-Plug 'prabirshrestha/asyncomplete-necosyntax.vim', { 'on': [] }
-Plug 'prabirshrestha/asyncomplete-flow.vim', { 'on': [] }
-Plug 'prabirshrestha/asyncomplete-file.vim', { 'on': [] }
 call plug#end()
 
 let g:calendar_google_calendar = 1
@@ -124,12 +114,13 @@ endif
 if !has("gui_running")
   let &t_AB="\e[48;5;%dm"
   let &t_AF="\e[38;5;%dm"
-  colorscheme atomified
 endif
+colorscheme atomified
 
 "hi Normal ctermbg=234 ctermfg=White guifg=Black guibg=White
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE
+hi Terminal ctermbg=NONE guibg=NONE
 set encoding=utf-8
 packadd termdebug
 "OH MY GOD GDB INTEGRATION IS SO GOOD

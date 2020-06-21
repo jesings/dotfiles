@@ -1,0 +1,8 @@
+background-color=#285577AA
+default-timeout=5000
+group-by=summary
+border-color=#4C7899AA
+
+[actionable=true]
+border-color=#CC5060AA
+default-timeout=10000

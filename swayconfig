@@ -179,12 +179,16 @@ bindsym XF86AudioMute exec amixer sset Master toggle
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec sudo brightnessctl s +1% # increase screen brightness
 bindsym XF86MonBrightnessDown exec sudo brightnessctl s 1%- # decrease screen brightness
+bindsym $mod+m exec amixer set Capture toggle
 
 bindsym Print exec grim -g "$(slurp -d)" - | wl-copy
 
 
 bindsym $mod+minus move scratchpad
 bindsym $mod+shift+minus scratchpad show
+
+bindsym $mod+shift+f exec alacritty -e nnn
+bindsym $mod+shift+n exec alacritty -e newsboat -r
 
 bindsym $mod+i exec firefox
 bindsym $mod+shift+i exec firefox --private-window
